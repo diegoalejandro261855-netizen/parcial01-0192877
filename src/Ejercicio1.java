@@ -6,6 +6,7 @@ public class    Ejercicio1 {
 
         double cantidadPaquetes = 0;
         double horas = 0;
+        double horasLargas = 0;
         
        
 
@@ -13,34 +14,41 @@ public class    Ejercicio1 {
             System.out.println("ingrese la cantidad de paquetes"+(i+1)+":");
             cantidadPaquetes = teclado.nextDouble();
 
-            double totalPaquetes = cantidadPaquetes * horas;
-            double promedio = totalPaquetes / horas;
-
-            if (horas>0) {
-                System.out.println("la hora con la menor cantidad"+horas);
-                
-
-                
-            } else {
-                double produccionInferior = horas - promedio;
-
-
-
-            }
-            
-
-
-
-
-
-
-
-
-
-
             
         }
 
+         double totalPaquetes = cantidadPaquetes * horas;
+            System.out.println("total de paquetes"+totalPaquetes);
+            
+            double promedio = totalPaquetes / horas;
+            System.out.println("el promedio es"+promedio);
+
+
+             if (horas>0) {
+                System.out.println("la hora con la menor cantidad"+horas);
+
+                double produccionMenor = horas - promedio;
+                
+
+                
+          
+
+            if (horasLargas<promedio) {
+                System.out.println("racha mas larga de horas"+horasLargas);
+
+            }
+
+
+            System.out.println("");
+
+    
+
+
+
+        
+ 
+
+           
 
 
 
