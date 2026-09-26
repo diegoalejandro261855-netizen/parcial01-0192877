@@ -2,45 +2,74 @@ import java.util.Scanner;
 public class    Ejercicio1 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        double [] paquetes = new double[10];
+        int [] paquetes = new int[10];
+        int total = 0;
 
-        double cantidadPaquetes = 0;
-        double horas = 0;
-        double horasLargas = 0;
-        
+       
        
 
         for (int i = 0; i < 10; i++) {
-            System.out.println("ingrese la cantidad de paquetes"+(i+1)+":");
-            cantidadPaquetes = teclado.nextDouble();
+            int cantidad;
+            do { System.out.println("ingrese la cantidad de paquete" + (i+1)+":");
+            cantidad=teclado.nextInt();
 
-            
+            if(cantidad < 0){
+                System.out.print("error la cantidad no puede ser negativa");
+            }
+
+                
+            } while (cantidad < 0);
+
+            paquetes[i]=cantidad;
+            total += cantidad;
+           
         }
 
-         double totalPaquetes = cantidadPaquetes * horas;
-            System.out.println("total de paquetes"+totalPaquetes);
+         double promedio = total / 10;
+         int menorCantidad = paquetes[0];
+         int horaMenor = 1;
+         for(int i =1; i < 10; i++){
+            if (paquetes[i]<menorCantidad){
+                menorCantidad = paquetes[i];
+                horaMenor = i + 1;
             
-            double promedio = totalPaquetes / horas;
-            System.out.println("el promedio es"+promedio);
+         }
+
+    }
+       int horasBajoPromedio = 0;
+       int rachaActual = 0;
+       int rachaMaxima = 0;
+
+       for(int i = 0; i <10; i++){
+        if (paquetes[i] < promedio) {
+            horasBajoPromedio++;
+            rachaActual++;
+
+            if(rachaActual > rachaMaxima){
+                rachaMaxima = rachaActual;
+            }
+         } else{
+            rachaActual =0;
+
+            }
+        }
+        System.out.println("el total de paquetes procesados"+total);
+        System.out.println("el promedio de paquetes por hora"+promedio);
+        System.out.println("el numero de la hora con la menor cantidad"+horaMenor + "("+ menorCantidad+"paquetes)");
+        System.out.println("cuantas horas tuvieron produccion inferior"+horasBajoPromedio);
+        System.out.println("racha mas larga de horas con bajo promedio" + rachaMaxima);
+
+        for (int i= 0; i< 10;i++) {
+            System.out.println("hora" + (i+1)+":" + paquetes[i]+ "paquetes");
 
 
-             if (horas>0) {
-                System.out.println("la hora con la menor cantidad"+horas);
-
-                double produccionMenor = horas - promedio;
-                
-
-                
-          
-
-            if (horasLargas<promedio) {
-                System.out.println("racha mas larga de horas"+horasLargas);
-
+       }
+            
+            
             }
 
 
-            System.out.println("");
-
+            
     
 
 
@@ -55,4 +84,4 @@ public class    Ejercicio1 {
 
         
     }
-}
+
