@@ -108,3 +108,22 @@ Construya un programa que:
 Entregue los dos archivos `.java`, debidamente nombrados y capaces de compilar y ejecutarse sin errores.
 
 **Analice primero y programe después. Java ejecuta exactamente lo escrito, incluso cuando la idea iba por otro camino.**
+
+## EJERCICIO 1
+Profesor, para este ejercicio utilicé un arreglo unidimensional  de 10 posiciones porque el problema nos pide evaluar 10 horas de producción de forma lineal.
+
+## Estructura: 
+Lo primero que hice fue implementar un bucle for combinado con un do-while. El do-while sirve estrictamente para validar los datos de entrada, obligando al usuario a digitar cantidades mayores o iguales a cero. Si mete un negativo, el programa no lo deja avanzar.
+
+Para calcular la racha más larga de horas bajo el promedio, creé dos variables: rachaActual y rachaMaxima. Cada vez que el programa encuentra una hora con producción menor al promedio, suma 1 a la racha actual y verifica si superó el récord en rachaMaxima. Si la hora es igual o mayor al promedio, el bloque else reinicia rachaActual a cero para romper el ciclo consecutivó, pero manteniendo el récord a salvo."
+
+## EJERCICIO 2
+
+En el segundo ejercicio utilicé una matriz bidimensional de 4 por 5, donde las filas representan las sucursales y las columnas representan los productos.
+
+Para llenar y procesar la matriz usé ciclos anidados. El ciclo externo controla las filas y el interno las columnas.
+
+Para optimizar el código y no hacer procesos redundantes, creé dos arreglos independientes: totalSucursales y totalProductos. Con ellos acumulé las sumas de cada fila y columna por separado.
+
+Teniendo esos arreglos, encontrar la menor sucursal o el mayor producto fue muy directo mediante un ciclo for que compara las posiciones. Además, al usar el operador < estrictamente, hizo que ante un  empate, el sistema conserve la primera sucursal que registró el menor valor, cumpliendo con la regla del ejercicio.
+
